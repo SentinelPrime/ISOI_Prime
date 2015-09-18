@@ -1,0 +1,35 @@
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  #dropdown1 {
+    background-color:#1e1e1e;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  #dropdown1 a {
+    color: #fdfdfe;
+  }
+  #dropdown1 :hover a{
+    color:#1e1e1e;
+  }
+    .pad-20{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .update{
+    height: 80px;
+    width: 100%;
+  }
+  .update-image{
+    height:80px;
+    width: 80px;
+  }

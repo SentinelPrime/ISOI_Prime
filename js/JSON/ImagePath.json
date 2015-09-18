@@ -1,0 +1,57 @@
+{
+  "SliderData" : [
+    {
+      "ImgPath" : "",
+      "HeadText" : "",
+      "FullText" : ""
+    },
+    {
+      "ImgPath" : "",
+      "HeadText" : "",
+      "FullText" : ""
+    },
+    {
+      "ImgPath" : "",
+      "HeadText" : "",
+      "FullText" : ""
+    },
+    {
+      "ImgPath" : "",
+      "HeadText" : "",
+      "FullText" : ""
+    },
+    {
+      "ImgPath" : "",
+      "HeadText" : "",
+      "FullText" : ""
+    }
+  ],
+  "ChapterDescription" : [
+    {
+      "Head" : "",
+      "Text" : ""
+    }
+  ],
+  "EventUpdates" : [
+    {
+      "ImgPath" : "",
+      "EventName": "",
+      "EventDate": ""
+    },
+    {
+      "ImgPath" : "",
+      "EventName": "",
+      "EventDate": ""
+    },{
+      "ImgPath" : "",
+      "EventName": "",
+      "EventDate": ""
+    },{
+      "ImgPath" : "",
+      "EventName": "",
+      "EventDate": ""
+    }
+  ]
+}
+
+

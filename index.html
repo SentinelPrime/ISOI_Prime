@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="no-js">
+<head>
+	<meta http-equiv = "Content-Type" content = "text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>REsturant Name | Home</title>
+	<!-----------------------------Stylesheets---------------------------->
+    <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="css/styles.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<!-------------------------------------------------------------------->
+    <script src="js/init.js" type="text/javascript"></script>
+</head>
+<body class="grey lighten-2" ng-app = "MainPage">
+	<header>
+		<!-- Head Bar -->
+		<nav class="grey darken-4 --unpinned pad-20">
+			<a href="#!" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+            <div class="nav-wraGpper">
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#!">Home</a></li>
+                    <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="Events">Events & Workshops<i class="mdi-navigation-arrow-drop-down left"></i></a></li>
+                    <li><a href="#!">Gallery</a></li>
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-activates="About">More Details<i class="mdi-navigation-arrow-drop-down left"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+		<!-- Nav Bar -->
+		<ul id="slide-out" class="side-nav">
+            <li><a href="#!">Home</a></li>
+            <li><a href="#!">Events & Workshop</a></li>
+            <li><a href="#!">Gallery</a></li>
+            <li><a href="#!">More Details</a></li>
+        </ul>
+        <!-- Dropdown About-->
+        <ul id="About" class="dropdown-content">
+            <li><a href="#!">About Us</a></li>
+            <li><a href="#!">Contact Us</a></li>
+        </ul>
+        <!-- Dropdown Events-->
+        <ul id="Events" class="dropdown-content">
+            <li><a href="#!">Upcoming Events</a></li>
+            <li><a href="#!">Featured Events</a></li>
+        </ul>
+	</header>
+    <!-- Slider-->
+    <div class="slider" ng-controller = "sliderCtrl">
+        <ul class="slides">
+            <li ng-repeat = "Object in SliderData">
+                <img src="{{Object.ImgPath}}">
+                <div class="caption center-align">
+                    <h3>{{ Object.HeadText }}</h3>
+                    <h5 class="light grey-text text-lighten-3">{{ Object.FullText }}.</h5>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+	<main class="container">
+        <div class="row">
+            <!--Chapter Description-->
+            <div class="card small col s7" ng-controller = "descriptionCtrl">
+                <span class="card-title">{{ Info.Head }}</span>
+                <div class="divider"></div>
+                <span class="white-text">{{ Info.Text }}</span>
+            </div>
+            <!--Updates-->
+            <div class="card small offset-s1 col s4" ng-controller = "updateCtrl">
+                <div class="card update" ng-repeat = "Object in eventUpdates">
+                    <img class="update-image" src = "{{ Object.ImgPath }}"></img>
+                    <span class="card-title">{{ Object.EventName }}</span>
+                    <div class="divider"></div>
+                    <span class="grey-text">{{ Object.EventDate }}</span>
+                </div>
+            </div>
+        </div>
+	</main>
+
+	<footer class="page-footer grey darken-4">
+		<div class="container">
+			<div class="row">
+				<div class="col s12 center-align">
+					<h5 class="white-text">Content</h5>
+				</div>
+			</div>
+		</div>
+		<div class="container footer-copyright grey darken-3 pad-20">
+				� 2015 Copyright
+				<a class="grey-text text-lighten-4 right modal-trigger" href="#"><i class="mdi-action-android"></i> Download App</a>
+		</div>
+	</footer>
+
+<!--------------------------Scripts-------------------------------->
+<script src="js/bin/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="js/bin/materialize.min.js" type="text/javascript"></script>
+<script src="js/bin/angular.min.js" type="text/javascript"></script>
+<script src="js/bin/app.js" type="text/javascript"></script>
+<!------------------------------------------------------------------>
+</body>
+</html>
