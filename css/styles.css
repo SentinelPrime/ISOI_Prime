@@ -24,7 +24,11 @@
     padding-left: 20px;
     padding-right: 20px;
   }
+  .pad-21{
+    padding: 20px
 
+  ;
+  }
   .update{
     height: 90px;
     width: 100%;
@@ -35,4 +39,9 @@
   }
   .margin {
     margin-left: -11.250px;
+  }
+  input[type = number]::-webkit-outer-spin-button,
+  input[type = number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }

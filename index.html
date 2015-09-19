@@ -59,17 +59,100 @@
 
 	<main class="container">
         <div class="row">
-            <!--Chapter Description-->
-            <div class="card small col s7" ng-controller = "descriptionCtrl">
-                <span class="card-title black-text">{{ Info.Head }}</span>
-                <div class="divider"></div>
-                <span class="grey-text">{{ Info.Text }}</span>
-            </div>
+
+            <div class="col s12 l7">
+                <!--Chapter Description-->
+                <div class="card small col s12" ng-controller = "descriptionCtrl">
+                    <span class="card-title black-text">{{ Info.Head }}</span>
+                    <div class="divider"></div>
+                    <span class="grey-text">{{ Info.Text }}</span>
+                </div>
+
+                <!--Member Ship Form-->
+                <div class="card  col s12 l12" ng-controller = "memformCtrl" ng-init="tcCheckbox = false">
+                    <form class="col s12" name = "memform">
+
+                        <!--First Name-->
+                        <div class="input-field col s12 l6">
+                            <i class="mdi-action-account-circle prefix"></i>
+                            <input required name="firstName" id="mem_fname" type="text" class="validate"  ng-model="firstName">
+                            <label for="mem_fname">First Name</label>
+                        </div>
+
+                        <!--Last Name-->
+                        <div class="input-field col s12 l6">
+                            <i class="mdi-action-account-circle prefix"></i>
+                            <input required  id="mem_lname" type="text" class="validate"  ng-model="lastName">
+                            <label for="mem_lname">Last Name</label>
+                        </div>
+
+                        <!--Registration Number-->
+                        <div class="input-field col s12 l6">
+                            <i class="mdi-action-picture-in-picture prefix"></i>
+                            <input required  id="mem_reg_no" type="text" class="validate" length="9"  ng-model="regNumber">
+                            <label for="mem_reg_no">Registration Number</label>
+                        </div>
+
+                        <!--Mobile Number-->
+                        <div class="input-field col s12 l6">
+                            <i class="mdi-hardware-smartphone prefix"></i>
+                            <input required id="mem_mobile" type="number" class="validate" length="10"  ng-model="mobileNumber">
+                            <label for="mem_mobile" data-error="Incorrect">Mobile Number</label>
+                        </div>
+
+                        <!--Date Of Birth-->
+                        <div class="input-field col s12 l6">
+                            <i class="mdi-action-today prefix"></i>
+                            <input required id="mem_dob" type="date" class="datepicker"  ng-model="DOB">
+                            <label for="mem_dob">Date Of Birth</label>
+                        </div>
+
+                        <!--Email-->
+                        <div class="input-field col s12 l6">
+                            <i class="mdi-communication-email prefix"></i>
+                            <input required name="email" id="mem_email" type="email" class="validate" ng-model="email">
+                            <label for="mem_email" data-error="Incorrect" >Email</label>
+                        </div>
+
+                        <!--Terms And Conditions-->
+                        <div class="input-field col s8 l7">
+                            <input required type="checkbox" class="filled-in" id="TC_checkbox"  ng-model="tcCheckbox"/>
+                            <label for="TC_checkbox">I Accept The <a class="modal-trigger waves-effect waves-light" href="#TCmodal">Terms & Condition</a></label>
+
+                            <!-- Terms & Condition Modal -->
+                            <div id="TCmodal" class="modal modal-fixed-footer">
+                                <div class="modal-content">
+                                    <h4>{{Object.HeadText}}</h4>
+                                    <p>{{Object.TCText}}</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat " ng-click = "tcCheckbox = true">I Agree</a>
+                                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat " >Close</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!--Submit-->
+                        <div class="input-field col s4 l5">
+                            <button class="btn waves-effect waves-light" type="submit" name="action" ng-disabled = "!tcCheckbox">Submit
+                                <i class="mdi-content-send right"></i>
+                            </button>
+                        </div>
+
+                        <div class="s12 l12">
+                            &nbsp;
+                        </div>
+                    </form>
+                </div>
+           </div>
+
+
             <!--Updates-->
-            <div class="card offset-s1 col s4" ng-controller = "updateCtrl">
+            <div class="card s12 offset-l1 col l4" ng-controller = "updateCtrl">
                 <div class="card update" ng-repeat = "Object in eventUpdates">
                     <div class="col margin">
-                        <img class="update-image" ng-hide = "{{ Object.Hide }}" src = "{{ Object.ImgPath }}">
+                        <img class="update-image" ng-hide = "{{ Object.Hide }}" src = "{{Object.ImgPath}}">
                     </div>
                     <div class="col">
                         <span class="card-title black-text">{{ Object.EventName }}</span>

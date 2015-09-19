@@ -2,7 +2,7 @@
 
         $('.slider').slider({
             full_width: true,
-            height:500
+            height: 500
         });
 
         $(".button-collapse").sideNav();
@@ -16,8 +16,19 @@
                 belowOrigin: true,
                 alignment: 'right'
         });
-    });
 
+        $('.datepicker').pickadate({
+            selectMonths: true,
+            selectYears: 100
+        });
+
+        $('.modal-trigger').leanModal({
+                dismissible: true,
+                opacity: .5,
+                in_duration: 300,
+                out_duration: 200,
+        });
+    });
 
     var app = angular.module('MainPage', []);
     app.controller('sliderCtrl', function($scope, $http) {
@@ -31,4 +42,7 @@
     app.controller('updateCtrl', function($scope, $http) {
         $http.get("http://localhost:63342/ISOI_Prime/js/JSON/ImagePath.json")
             .success(function(response) {$scope.eventUpdates = response.EventUpdates;});
+    });
+    app.controller('memformCtrl', function($scope) {
+
     });
