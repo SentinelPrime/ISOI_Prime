@@ -11,7 +11,7 @@
 	<!-------------------------------------------------------------------->
     <script src="js/init.js" type="text/javascript"></script>
 </head>
-<body class="grey lighten-2" ng-app = "MainPage">
+<body class="blue lighten-2" ng-app = "MainPage">
 	<header>
 		<!-- Head Bar -->
 		<nav class="grey darken-4 --unpinned pad-20">
@@ -49,9 +49,9 @@
         <ul class="slides">
             <li ng-repeat = "Object in sliderData">
                 <img src="{{Object.ImgPath}}">
-                <div class="caption {{ Object.Alignment }}">
-                    <h3>{{ Object.HeadText }}</h3>
-                    <h5 class="light grey-text text-lighten-3">{{ Object.FullText }}.</h5>
+                <div class="caption {{Object.Alignment}}">
+                    <h3>{{Object.HeadText}}</h3>
+                    <h5 class="light grey-text text-lighten-3">{{Object.FullText}}</h5>
                 </div>
             </li>
         </ul>
