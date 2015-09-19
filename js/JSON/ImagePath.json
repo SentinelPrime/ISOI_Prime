@@ -74,7 +74,13 @@
       "EventName": "",
       "EventDate": ""
     }
-  ]
+  ],
+  "TCOBJ" :
+  {
+    "HeadText" : "INSTRUMENT SOCIETY OF INDIA",
+    "TCText" : "ISOI is a chapter that exemplifies quality and competence. It was established in the year 1970 at the esteemed IISc Bengaluru and now boasts a wide network of colleges affiliated with it including chapter in cities such as Delhi, Chennai, Dehradun and Pune. With a devoted team of students to supplement the technological advancement it has conducted many a workshops, seminars and symposiums thast not only provided the students with the ability to work with some of the industry professionals, it also gave the students an insight of how to tackle the industrial problems with more advanced technological solutions."
+  }
+
 }
 
 

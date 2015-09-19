@@ -43,6 +43,8 @@
         $http.get("http://localhost:63342/ISOI_Prime/js/JSON/ImagePath.json")
             .success(function(response) {$scope.eventUpdates = response.EventUpdates;});
     });
-    app.controller('memformCtrl', function($scope) {
+    app.controller('memformCtrl', function($scope, $http) {
+        $http.get("http://localhost:63342/ISOI_Prime/js/JSON/ImagePath.json")
+            .success(function(response) {$scope.tcOBJ = response.TCOBJ;});
 
     });
