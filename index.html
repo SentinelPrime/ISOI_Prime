@@ -4,7 +4,7 @@
 	<meta http-equiv = "Content-Type" content = "text/html; charset=utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>REsturant Name | Home</title>
+    <title>ISOI-VIT | Home</title>
 	<!-----------------------------Stylesheets---------------------------->
     <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 	<link href="css/styles.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -47,9 +47,9 @@
     <!-- Slider-->
     <div class="slider" ng-controller = "sliderCtrl">
         <ul class="slides">
-            <li ng-repeat = "Object in SliderData">
+            <li ng-repeat = "Object in sliderData">
                 <img src="{{Object.ImgPath}}">
-                <div class="caption center-align">
+                <div class="caption {{ Object.Alignment }}">
                     <h3>{{ Object.HeadText }}</h3>
                     <h5 class="light grey-text text-lighten-3">{{ Object.FullText }}.</h5>
                 </div>
@@ -61,17 +61,21 @@
         <div class="row">
             <!--Chapter Description-->
             <div class="card small col s7" ng-controller = "descriptionCtrl">
-                <span class="card-title">{{ Info.Head }}</span>
+                <span class="card-title black-text">{{ Info.Head }}</span>
                 <div class="divider"></div>
-                <span class="white-text">{{ Info.Text }}</span>
+                <span class="grey-text">{{ Info.Text }}</span>
             </div>
             <!--Updates-->
-            <div class="card small offset-s1 col s4" ng-controller = "updateCtrl">
+            <div class="card offset-s1 col s4" ng-controller = "updateCtrl">
                 <div class="card update" ng-repeat = "Object in eventUpdates">
-                    <img class="update-image" src = "{{ Object.ImgPath }}"></img>
-                    <span class="card-title">{{ Object.EventName }}</span>
-                    <div class="divider"></div>
-                    <span class="grey-text">{{ Object.EventDate }}</span>
+                    <div class="col margin">
+                        <img class="update-image" ng-hide = "{{ Object.Hide }}" src = "{{ Object.ImgPath }}">
+                    </div>
+                    <div class="col">
+                        <span class="card-title black-text">{{ Object.EventName }}</span>
+                        <div class="divider"></div>
+                        <span class="grey-text">{{ Object.EventDate }}</span>
+                    </div>
                 </div>
             </div>
         </div>

@@ -18,14 +18,14 @@
 
     var app = angular.module('MainPage', []);
     app.controller('sliderCtrl', function($scope, $http) {
-        $http.get("")
+        $http.get("http://localhost:63342/ISOI_Prime/js/JSON/ImagePath.json")
             .success(function(response) {$scope.sliderData = response.SliderData;});
     });
     app.controller('descriptionCtrl', function($scope, $http) {
-        $http.get("")
+        $http.get("http://localhost:63342/ISOI_Prime/js/JSON/ImagePath.json")
             .success(function(response) {$scope.Info = response.ChapterDescription;});
     });
     app.controller('updateCtrl', function($scope, $http) {
-        $http.get("")
+        $http.get("http://localhost:63342/ISOI_Prime/js/JSON/ImagePath.json")
             .success(function(response) {$scope.eventUpdates = response.EventUpdates;});
     });
