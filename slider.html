@@ -1,0 +1,11 @@
+<div class="slider" ng-controler = "sliderCtrl">
+    <ul class="slides">
+        <li ng-repeat = "Object in sliderData">
+            <img src="{{Object.ImgPath}}">
+            <div class="caption {{Object.Alignment}}">
+                <h3>{{Object.HeadText}}</h3>
+                <h5 class="light grey-text text-lighten-3">{{Object.FullText}}</h5>
+            </div>
+        </li>
+    </ul>
+</div>

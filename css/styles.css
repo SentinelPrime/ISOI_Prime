@@ -44,7 +44,7 @@
     margin: 0;
   }
 
-  .container {
+  #MainBody .container {
       margin: 0 auto;
       max-width: 1280px;
       width: 98%; }

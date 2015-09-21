@@ -1,0 +1,54 @@
+
+<div id = "MainBody" ng-controler = "mainCtrl">
+
+    <!-- Slider-->
+    <div ng-include="'slider.html'">
+
+    </div>
+
+    <div  class="row container">
+
+        <div class="col s12 l7">
+            <!--Chapter Description-->
+            <div class="card small col s12" ng-controller = "descriptionCtrl">
+                <span class="card-title black-text">{{Info.Head}}</span>
+                <div class="divider"></div>
+                <span class="grey-text">{{Info.Text}}</span>
+            </div>
+
+            <!--Member Ship Form-->
+            <div ng-include="'memform.html'">
+
+            </div>
+        </div>
+
+        <!--Updates-->
+        <div class="card s12 offset-l1 col l4" ng-controller = "updateCtrl">
+            <div class="card update" ng-repeat = "Object in eventUpdates">
+                <div class="col margin">
+                    <img class="update-image" ng-hide = "{{ Object.Hide }}" src = "{{Object.ImgPath}}">
+                </div>
+                <div class="col">
+                    <span class="card-title black-text">{{ Object.EventName }}</span>
+                    <div class="divider"></div>
+                    <span class="grey-text">{{ Object.EventDate }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.datepicker').pickadate({
+                selectMonths: true,
+                selectYears: 100
+            });
+            $('.modal-trigger').leanModal({
+                dismissible: true,
+                opacity: .5,
+                in_duration: 300,
+                out_duration: 200
+            });
+        });
+    </script>
+</div>
